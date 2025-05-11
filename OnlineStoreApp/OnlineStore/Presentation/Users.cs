@@ -62,7 +62,6 @@ public partial class Users : Form
         PopulateUsers();
     }
 
-
     private void PopulateUsers()
     {
         usersDataGrid.DataSource = null;

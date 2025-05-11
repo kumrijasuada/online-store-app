@@ -31,22 +31,24 @@ public partial class AddUser : Form
         string selectedRole = comboBox1.SelectedItem?.ToString();
 
         // Need to prevent admin role duplication
-        bool existingAdmin = false;
-        foreach (var user in Program.UserManager.GetAllUsers())
+        if (selectedRole == Constants.AdminRole)
         {
-            if (user.Role == Constants.AdminRole && user != modifyUser)
+            bool existingAdmin = false;
+            foreach (var user in Program.UserManager.GetAllUsers())
             {
-                existingAdmin = true;
-                break;
+                if (user.Role == Constants.AdminRole &&  user != modifyUser)
+                {
+                    existingAdmin = true;
+                    break;
+                }
+            }
+
+            if (existingAdmin)
+            {
+                MessageBox.Show("There is already an existing user with the 'Admin' role.");
+                return;
             }
         }
-
-        if (existingAdmin)
-        {
-            MessageBox.Show("There is already an existing user with the 'Admin' role.");
-            return;
-        }
-
         if (addUser)
         {
             modifyUser = new User();
