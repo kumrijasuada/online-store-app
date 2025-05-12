@@ -20,4 +20,10 @@ public partial class AdminDashboard : Form
         Users users = new();
         users.ShowDialog();
     }
+
+    private void prodBox_Click(object sender, EventArgs e)
+    {
+        Products products = new();
+        products.ShowDialog();
+    }
 }

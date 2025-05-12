@@ -33,8 +33,11 @@ partial class AdminDashboard
         pictureBox2 = new PictureBox();
         exitLbl = new Label();
         usersLbl = new Label();
+        prodBox = new PictureBox();
+        prodLbl = new Label();
         ((System.ComponentModel.ISupportInitialize)usersBox).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)prodBox).BeginInit();
         SuspendLayout();
         // 
         // usersBox
@@ -75,11 +78,32 @@ partial class AdminDashboard
         usersLbl.TabIndex = 3;
         usersLbl.Text = "Users";
         // 
+        // prodBox
+        // 
+        prodBox.Image = Properties.Resources.products;
+        prodBox.Location = new Point(12, 239);
+        prodBox.Name = "prodBox";
+        prodBox.Size = new Size(260, 165);
+        prodBox.TabIndex = 4;
+        prodBox.TabStop = false;
+        prodBox.Click += prodBox_Click;
+        // 
+        // prodLbl
+        // 
+        prodLbl.AutoSize = true;
+        prodLbl.Location = new Point(95, 425);
+        prodLbl.Name = "prodLbl";
+        prodLbl.Size = new Size(66, 20);
+        prodLbl.TabIndex = 5;
+        prodLbl.Text = "Products";
+        // 
         // AdminDashboard
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(853, 469);
+        Controls.Add(prodLbl);
+        Controls.Add(prodBox);
         Controls.Add(usersLbl);
         Controls.Add(exitLbl);
         Controls.Add(pictureBox2);
@@ -88,6 +112,7 @@ partial class AdminDashboard
         Text = "AdminDashboard";
         ((System.ComponentModel.ISupportInitialize)usersBox).EndInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+        ((System.ComponentModel.ISupportInitialize)prodBox).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -98,4 +123,6 @@ partial class AdminDashboard
     private PictureBox pictureBox2;
     private Label exitLbl;
     private Label usersLbl;
+    private PictureBox prodBox;
+    private Label prodLbl;
 }

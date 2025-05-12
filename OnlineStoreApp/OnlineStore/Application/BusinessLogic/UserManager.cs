@@ -34,6 +34,7 @@ public class UserManager
         {
             if (user.Email.Equals(email, StringComparison.OrdinalIgnoreCase) && user.Password == password)
             {
+                Program.CurrentLoggedIn = user;
                 return user;
             }
         }
