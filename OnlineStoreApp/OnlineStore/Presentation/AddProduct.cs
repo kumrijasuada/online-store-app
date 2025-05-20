@@ -10,14 +10,12 @@ public partial class AddProduct : Form
     {
         InitializeComponent();
         modifyProduct = product;
-        PopulateProductInfo();
+        if (modifyProduct != null)
+            PopulateProductInfo();
     }
 
     private void PopulateProductInfo()
     {
-        if (modifyProduct == null)
-            return;
-
         textBox1.Text = modifyProduct.Name;
         textBox2.Text = modifyProduct.Barcode;
         textBox3.Text = modifyProduct.Price.ToString();
@@ -35,14 +33,24 @@ public partial class AddProduct : Form
 
         if (modifyProduct == null)
         {
-            modifyProduct = new Product();
+            modifyProduct = new Product()
+            {
+                Name = textBox1.Text,
+                Barcode = textBox2.Text,
+                Price = decimal.Parse(textBox3.Text),
+                Stock = int.Parse(textBox4.Text),
+                Description = textBox5.Text,
+            };
             Program.ProductManager.AddProduct(modifyProduct);
         }
-        modifyProduct.Name = textBox1.Text;
-        modifyProduct.Barcode = textBox2.Text;
-        modifyProduct.Price = decimal.Parse(textBox3.Text);
-        modifyProduct.Stock = int.Parse(textBox4.Text);
-        modifyProduct.Description = textBox5.Text;
+        else
+        {
+            modifyProduct.Name = textBox1.Text;
+            modifyProduct.Barcode = textBox2.Text;
+            modifyProduct.Price = decimal.Parse(textBox3.Text);
+            modifyProduct.Stock = int.Parse(textBox4.Text);
+            modifyProduct.Description = textBox5.Text;
+        }
 
         Close();
     }

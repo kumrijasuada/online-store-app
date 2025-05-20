@@ -1,15 +1,13 @@
-﻿namespace OnlineStore.Application.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace OnlineStore.Application.Models;
 
 public class User
 {
-    public int Id { get; }
+    [Key]
+    public int Id { get; set; }
     public string Name { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
     public string Role { get; set; }
-    private static int _id = 0;
-    public User()
-    {
-        Id = ++_id;
-    }
 }
