@@ -61,6 +61,16 @@ namespace OnlineStore.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap category {
+            get {
+                object obj = ResourceManager.GetObject("category", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Server=localhost\\SQLEXPRESS;Database=OnlineStore;Trusted_Connection=True;TrustServerCertificate=true;.
         /// </summary>
         internal static string ConnectionString {
@@ -85,6 +95,16 @@ namespace OnlineStore.Properties {
         internal static System.Drawing.Bitmap products {
             get {
                 object obj = ResourceManager.GetObject("products", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap users__1_ {
+            get {
+                object obj = ResourceManager.GetObject("users (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

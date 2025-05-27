@@ -39,6 +39,7 @@
             label5 = new Label();
             textBox5 = new TextBox();
             saveBtn = new Button();
+            productCatComboBox = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -124,7 +125,7 @@
             // 
             // saveBtn
             // 
-            saveBtn.Location = new Point(271, 399);
+            saveBtn.Location = new Point(286, 559);
             saveBtn.Name = "saveBtn";
             saveBtn.Size = new Size(94, 29);
             saveBtn.TabIndex = 10;
@@ -132,11 +133,21 @@
             saveBtn.UseVisualStyleBackColor = true;
             saveBtn.Click += saveBtn_Click;
             // 
+            // productCatComboBox
+            // 
+            productCatComboBox.FormattingEnabled = true;
+            productCatComboBox.Location = new Point(24, 432);
+            productCatComboBox.Name = "productCatComboBox";
+            productCatComboBox.Size = new Size(217, 28);
+            productCatComboBox.TabIndex = 11;
+            productCatComboBox.Text = "Product Category";
+            // 
             // AddProduct
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(815, 640);
+            Controls.Add(productCatComboBox);
             Controls.Add(saveBtn);
             Controls.Add(textBox5);
             Controls.Add(label5);
@@ -167,5 +178,6 @@
         private Label label5;
         private TextBox textBox5;
         private Button saveBtn;
+        private ComboBox productCatComboBox;
     }
 }

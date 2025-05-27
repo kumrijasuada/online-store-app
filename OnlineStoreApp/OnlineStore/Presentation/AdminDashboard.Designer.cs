@@ -35,9 +35,12 @@ partial class AdminDashboard
         usersLbl = new Label();
         prodBox = new PictureBox();
         prodLbl = new Label();
+        label1 = new Label();
+        categoriesPictureBox = new PictureBox();
         ((System.ComponentModel.ISupportInitialize)usersBox).BeginInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
         ((System.ComponentModel.ISupportInitialize)prodBox).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)categoriesPictureBox).BeginInit();
         SuspendLayout();
         // 
         // usersBox
@@ -53,7 +56,7 @@ partial class AdminDashboard
         // pictureBox2
         // 
         pictureBox2.Image = Properties.Resources.logoff;
-        pictureBox2.Location = new Point(700, 308);
+        pictureBox2.Location = new Point(697, 300);
         pictureBox2.Name = "pictureBox2";
         pictureBox2.Size = new Size(107, 96);
         pictureBox2.TabIndex = 1;
@@ -97,11 +100,32 @@ partial class AdminDashboard
         prodLbl.TabIndex = 5;
         prodLbl.Text = "Products";
         // 
+        // label1
+        // 
+        label1.AutoSize = true;
+        label1.Location = new Point(390, 425);
+        label1.Name = "label1";
+        label1.Size = new Size(80, 20);
+        label1.TabIndex = 7;
+        label1.Text = "Categories";
+        // 
+        // categoriesPictureBox
+        // 
+        categoriesPictureBox.Image = (Image)resources.GetObject("categoriesPictureBox.Image");
+        categoriesPictureBox.Location = new Point(343, 247);
+        categoriesPictureBox.Name = "categoriesPictureBox";
+        categoriesPictureBox.Size = new Size(168, 157);
+        categoriesPictureBox.TabIndex = 8;
+        categoriesPictureBox.TabStop = false;
+        categoriesPictureBox.Click += categoriesPictureBox_Click;
+        // 
         // AdminDashboard
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(853, 469);
+        Controls.Add(categoriesPictureBox);
+        Controls.Add(label1);
         Controls.Add(prodLbl);
         Controls.Add(prodBox);
         Controls.Add(usersLbl);
@@ -113,6 +137,7 @@ partial class AdminDashboard
         ((System.ComponentModel.ISupportInitialize)usersBox).EndInit();
         ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
         ((System.ComponentModel.ISupportInitialize)prodBox).EndInit();
+        ((System.ComponentModel.ISupportInitialize)categoriesPictureBox).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -125,4 +150,6 @@ partial class AdminDashboard
     private Label usersLbl;
     private PictureBox prodBox;
     private Label prodLbl;
+    private Label label1;
+    private PictureBox categoriesPictureBox;
 }

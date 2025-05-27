@@ -49,9 +49,22 @@ public partial class AddUser : Form
                 return;
             }
         }
+
+        if (addUser && string.IsNullOrWhiteSpace(textBox3.Text))
+        {
+            MessageBox.Show("Password is required!");
+            return;
+        }
+
         if (addUser)
         {
-            modifyUser = new User();
+            modifyUser = new User
+            {
+                Name = textBox1.Text,
+                Email = textBox2.Text,
+                Role = comboBox1.SelectedItem?.ToString()!,
+                Password = textBox3.Text,
+            };
             Program.UserManager.AddUser(modifyUser);
             addUser = true;
         }
@@ -59,12 +72,6 @@ public partial class AddUser : Form
         modifyUser.Name = textBox1.Text;
         modifyUser.Email = textBox2.Text;
         modifyUser.Role = comboBox1.SelectedItem?.ToString()!;
-
-        if (addUser && string.IsNullOrWhiteSpace(textBox3.Text))
-        {
-            MessageBox.Show("Password is required!");
-            return;
-        }
 
         if (!string.IsNullOrWhiteSpace(textBox3.Text))
         {

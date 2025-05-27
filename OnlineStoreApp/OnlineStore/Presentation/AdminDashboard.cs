@@ -26,4 +26,10 @@ public partial class AdminDashboard : Form
         Products products = new();
         products.ShowDialog();
     }
+
+    private void categoriesPictureBox_Click(object sender, EventArgs e)
+    {
+        Categories categories = new();
+        categories.ShowDialog();
+    }
 }

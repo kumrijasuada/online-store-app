@@ -11,7 +11,6 @@ public partial class Products : Form
         PopulateProducts();
     }
 
-
     private void addProdBtn_Click(object sender, EventArgs e)
     {
         AddProduct addProduct = new();
@@ -48,6 +47,7 @@ public partial class Products : Form
         dataGridView1.DataSource = null;
         dataGridView1.DataSource = Program.ProductManager.GetAllProducts(Program.CurrentLoggedIn.Role);
         dataGridView1.Columns[nameof(Product.Id)].Visible = false;
+        dataGridView1.Columns[nameof(Product.Category)].Visible = false;
     }
 
     private void dataGridView1_SelectionChanged(object sender, EventArgs e)

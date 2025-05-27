@@ -9,6 +9,8 @@ public partial class AddProduct : Form
     public AddProduct(Product product = null)
     {
         InitializeComponent();
+        PopulateComboBox();
+
         modifyProduct = product;
         if (modifyProduct != null)
             PopulateProductInfo();
@@ -21,6 +23,13 @@ public partial class AddProduct : Form
         textBox3.Text = modifyProduct.Price.ToString();
         textBox4.Text = modifyProduct.Stock.ToString();
         textBox5.Text = modifyProduct.Description;
+        PopulateComboBox();
+    }
+    private void PopulateComboBox()
+    {
+        productCatComboBox.DataSource = Program.CategoryManager.GetAllCategories();
+        productCatComboBox.DisplayMember = nameof(Product.Name);
+        productCatComboBox.ValueMember = nameof(Product.Id);
     }
 
     private void saveBtn_Click(object sender, EventArgs e)
@@ -40,6 +49,7 @@ public partial class AddProduct : Form
                 Price = decimal.Parse(textBox3.Text),
                 Stock = int.Parse(textBox4.Text),
                 Description = textBox5.Text,
+                CategoryId = (int)productCatComboBox.SelectedValue
             };
             Program.ProductManager.AddProduct(modifyProduct);
         }
@@ -50,6 +60,7 @@ public partial class AddProduct : Form
             modifyProduct.Price = decimal.Parse(textBox3.Text);
             modifyProduct.Stock = int.Parse(textBox4.Text);
             modifyProduct.Description = textBox5.Text;
+            modifyProduct.CategoryId = (int)productCatComboBox.SelectedValue;
         }
 
         Close();

@@ -12,6 +12,7 @@ internal static class Program
     public static OnlineStoreDbContext OnlineStoreDbContext { get; private set; } = new();
     public static UserManager UserManager = new();
     public static ProductManager ProductManager = new();
+    public static CategoryManager CategoryManager = new();
     public static User CurrentLoggedIn = new();
 
     /// <summary>
